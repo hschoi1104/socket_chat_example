@@ -1,14 +1,12 @@
 # socket_chat_example
 
 ```bash
-express server
 cd server
 npm install
-npm start
+node server.js
 ```
 ```bash
-vue create client
 cd client
-vue add vuetify
+npm install
 npm run serve
 ```
