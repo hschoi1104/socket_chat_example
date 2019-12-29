@@ -25,7 +25,7 @@
       filled
       label="Chat"
       auto-grow
-      value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+      value=""
     >
     </v-textarea>
 
@@ -51,29 +51,26 @@ export default {
      name: 'Chat', 
      created() { 
          this.$socket.on('chat', (data)=> { 
-             this.textarea += data.message + "\n"
+             this.textarea += (data.socket_id +" : "+ data.message + "\n") 
             }) 
         },
         data() {
             return {
                 textarea: "",
                 message: '',
+                socket_id:'',
             } 
         },
         methods: { 
             sendMessage () {
                 this.$socket.emit('chat',{
-                    message: this.message
+                    message: this.message,
+                    socket_id: this.$socket.id
                 });
-                this.textarea += this.message + "\n" 
+                this.textarea += (this.$socket.id +" : "+ this.message + "\n") 
                 this.message = '' 
             } 
         } 
     } 
 </script> 
-<style> 
-.md-app { 
-    height: 800px; border: 1px solid rgba(#000, .12); } 
-    .md-textarea { height: 300px; }
-</style>
 
