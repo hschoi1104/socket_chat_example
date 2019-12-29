@@ -1,5 +1,24 @@
 <template>
-    <v-container fluid>
+  <v-container fluid>
+<v-toolbar dense>
+    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+    <v-toolbar-title>Socket.io Chat Example</v-toolbar-title>
+
+    <v-spacer></v-spacer>
+
+    <v-btn icon>
+      <v-icon>mdi-magnify</v-icon>
+    </v-btn>
+        <v-btn icon>
+           <v-icon>mdi-heart</v-icon>
+        </v-btn>
+    <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+    </v-btn>
+    </v-toolbar>
+
+      <v-card>
     <v-textarea
     v-model="textarea"
       name="input-7-1"
@@ -9,12 +28,13 @@
       value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
     >
     </v-textarea>
-        <div class="my-2">
+
+     <v-card-actions>
       <v-text-field
             v-model="message"
             :rules="nameRules"
             :counter="10"
-            label="chat content"
+            label=""
             required
           >
         </v-text-field>
@@ -22,7 +42,8 @@
         <v-btn depressed @click="sendMessage()">
             submit
         </v-btn>
-        </div>
+         </v-card-actions>
+    </v-card>
   </v-container>
 </template>
 <script> 
