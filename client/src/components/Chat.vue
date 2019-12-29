@@ -33,7 +33,6 @@
       <v-text-field
             v-model="message"
             :rules="nameRules"
-            :counter="10"
             label=""
             required
           >
