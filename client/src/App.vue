@@ -1,34 +1,22 @@
 <template>
-  <div id="app">
-   <Chat/>
-    <router-view/>
-  </div>
+  <v-app>
+    <Chat/>
+  </v-app>
 </template>
 
-<script> 
-import Chat from './components/Chat.vue' 
-export default { name: 'app', components: { Chat } }
+<script>
+import HelloWorld from './components/HelloWorld';
+import Chat from './components/Chat';
+
+export default {
+  name: 'App',
+
+  components: {
+    Chat,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>

@@ -1,22 +1,29 @@
-<template> 
-<div class="page-container"> 
-    <md-app> <md-app-toolbar class="md-primary"> 
-        <div class="md-toolbar-row"> 
-            <span class="md-title">My Chat App</span> 
-            </div> 
-            </md-app-toolbar> 
-            <md-app-content> 
-                <md-field>
-                    <label>Message</label>
-                     <md-textarea v-model="textarea" disabled v-auto-scroll-bottom></md-textarea> 
-                     </md-field> <md-field> 
-                    <label>Your Message</label> 
-                    <md-input v-model="message"></md-input> 
-                    <md-button class="md-primary md-raised" @click="sendMessage()">Submit</md-button> 
-                </md-field> 
-            </md-app-content> 
-        </md-app>
-    </div> 
+<template>
+    <v-container fluid>
+    <v-textarea
+    v-model="textarea"
+      name="input-7-1"
+      filled
+      label="Chat"
+      auto-grow
+      value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+    >
+    </v-textarea>
+        <div class="my-2">
+      <v-text-field
+            v-model="message"
+            :rules="nameRules"
+            :counter="10"
+            label="chat content"
+            required
+          >
+        </v-text-field>
+
+        <v-btn depressed @click="sendMessage()">
+            submit
+        </v-btn>
+        </div>
+  </v-container>
 </template>
 <script> 
 export default {

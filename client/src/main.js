@@ -7,6 +7,7 @@ import 'vue-material/dist/vue-material.css'
 import 'vue-material/dist/theme/black-green-light.css'
 
 import io from 'socket.io-client';
+import vuetify from './plugins/vuetify';
 const socket = io('http://localhost:3001');
 
 
@@ -19,5 +20,6 @@ Vue.config.productionTip = false
 new Vue({
     router,
     store,
+    vuetify,
     render: function(h) { return h(App) }
 }).$mount('#app')
